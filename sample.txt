@@ -1,0 +1,277 @@
+//REGISTRATION PAGE
+<!Doctype html>
+<html>
+<head>
+<title>Registration</title>
+<style>
+body{
+font-family: Arial, sans-serif;
+}
+form{
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px black;
+max-width: 500px;
+margin: auto;
+background-color:white;
+}
+form input{
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<h1 bgcolor="purple"><center><b><i>REGISTRATION FORM</i></b></center></h1>
+<form id="regform">
+<label>First Name:</label>
+<input type="text" id="firstname"></input><br><br>
+<label>Last Name:</label>
+<input type="text" id="lastname"></input><br><br>
+<label>Location:</label>
+<input type="text" id="location"></input><br><br>
+ <label for="registerEmail">Email:</label>
+ <input type="email" id="registerEmail" required><br><br>
+ <label for="registerPassword">Password:</label>
+ <input type="password" id="registerPassword" required><br><br>
+ <label for="confirmPassword">Confirm Password:</label>
+ <input type="password" id="confirmPassword" required> <br><br>
+<button type="submit">SUBMIT</button>
+<button type="reset" value='reset'>RESET</button>
+</form>
+</body>
+</html>
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~ (main)
+$ cd /c/Users/Asus/Desktop/Devops2/
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ echo "# Devops_External" >> README.md
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git init
+Initialized empty Git repository in C:/Users/Asus/Desktop/Devops2/.git/
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (master)
+$ git commit -m "first commit"
+[master (root-commit) 3057eba] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (master)
+$ git branch -M main
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git remote add origin https://github.com/SaiHarshitha00/Devops_External.git
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 241 bytes | 241.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SaiHarshitha00/Devops_External.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git add .
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git commit -m "initial commit"
+[main 11fcd98] initial commit
+ 1 file changed, 41 insertions(+)
+ create mode 100644 registration2.html
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git branch -M main
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git remote add origin
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git remote add origin https://github.com/SaiHarshitha00/Devops_External.git
+error: remote origin already exists.
+
+Asus@DESKTOP-E1I3K88 MINGW64 ~/Desktop/Devops2 (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 765 bytes | 765.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SaiHarshitha00/Devops_External.git
+   3057eba..11fcd98  main -> main
+branch 'main' set up to track 'origin/main'.
+
+//Jenkinsfile
+pipeline{
+  agent any
+  stages{
+    stage('Build'){
+      steps{
+        echo 'Building...'
+      }
+    }
+    stage('Test'){
+      steps{
+        echo 'Testing...'
+      }
+    }
+    stage('Deploy'){
+      steps{
+        echo 'Deploying...'
+      }
+    }
+  }
+}
+#######
+
+docker rum -d -p 8090:80 docker/welcome-to-docker
+docker ps
+docker exec -it <containerid> ls
+docker logs <>
+docker container ls
+docker stop <>
+docker kill <>
+docker images
+docker rm <>
+docker rmi <>
+########
+DOCKERFILE:
+FROM python: latest
+FROM python:3.9-slim
+WORKDIR /app
+COPY . /app
+CMD["python","-u","app.py"]
+
+APP.PY:
+import os
+print("This is my first image.")
+print("Current Dir is:",os.getcwd())
+print(os.listdir())
+
+docker build -t listimage .
+docker run --name firstpyc listimage
+docker run -dp 3000:3000 listimage
+#####
+kubectl get nodes
+kubectl get ns
+kubectl config use-context docker-desktop
+kubectl apply -f https://raw.githubusercontent.com/oumkale/k8sOperator/main/config/deployments/app.yaml
+
+kubectl get po
+kubectl port-forward svc/podtato-main 9000:9000
+kubectl set image deploy/podtato-main server-kaleoum/podtato-main:v0.1.0
+kubectl get po
+######
+Create the HTML Page (index.html)
+Create the index.html file inside the project directory (e.g., /selenium-test/index.html).
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test Page</title>
+</head>
+<body>
+    <h1 id="greeting">Hello, World!</h1>
+    <button id="changeText">Change Greeting</button>
+    
+    <script>
+        // JavaScript code to change the text
+        document.getElementById('changeText').addEventListener('click', function() {
+            document.getElementById('greeting').innerText = 'Hello, Selenium!';
+        });
+    </script>
+</body>
+</html>
+Create the Selenium Test Script (test.js)
+In the
+ same project folder (/selenium-test), create the Selenium test script (test.js).// test.js
+const { Builder, By, until } = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
+const path = require('path');
+
+(async function testJavaScript() {
+    // Set up the Chrome WebDriver
+    let driver = await new Builder().forBrowser('chrome').setChromeOptions(new chrome.Options()).build();
+    try {
+        // Open the local HTML file (adjust the path as needed)
+        await driver.get('file://' + path.resolve(__dirname, 'index.html'));
+
+        // Check initial greeting text
+        let greetingText = await driver.findElement(By.id('greeting')).getText();
+        console.log('Initial greeting: ' + greetingText); // Should print "Hello, World!"
+
+        // Find the button and click it
+        let button = await driver.findElement(By.id('changeText'));
+        await button.click();
+
+        // Wait for the greeting text to change
+        await driver.wait(until.elementTextIs(driver.findElement(By.id('greeting')), 'Hello, Selenium!'), 5000);
+
+        // Check if the greeting text is updated
+        greetingText = await driver.findElement(By.id('greeting')).getText();
+        console.log('Updated greeting: ' + greetingText); // Should print "Hello, Selenium!"
+        
+    } finally {
+        // Quit the driver session
+        await driver.quit();
+    }
+})();
+cd /path/to/selenium-test
+npm init -y        # Initialize a new npm project
+npm install selenium-webdriver chromedriver
+node test.js
+#####
+docker images
+docker pull selenium/standalone-chrome
+docker images
+docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome
+localhost:4444
+//test.py
+from selenium import webdriver # type: ignore
+from selenium.webdriver.common.by import By # type: ignore
+
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-ssl-errors=yes')
+options.add_argument('--ignore-certificate-errors')
+
+driver = webdriver.Remote(
+    command_executor='http://localhost:4444/wd/hub',
+    options=options
+)
+
+driver.get("https://www.browserstack.com/")
+driver.find_element(By.LINK_TEXT, "Get started free").click() #seleniumDockerTest.py
+from selenium import webdriver # type: ignore
+import time
+print("Test Execution Started")
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-ssl-errors=yes')
+options.add_argument('--ignore-certificate-errors')
+driver = webdriver.Remote(
+    command_executor='http://localhost:4444/wd/hub',
+    options=options
+)
+
+#maximize the window size
+driver.maximize_window()
+time.sleep(10)
+#navigate to browserstack.com
+driver.get("https://www.browserstack.com/")
+#click on the Get started for free button
+driver.find_element_by_link_text("Get started free").click()
+time.sleep(10)
+#close the browser
+driver.close()
+driver.quit()
+print("Test Execution Successfully Completed!")
+
+
